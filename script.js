@@ -22,13 +22,15 @@ for (var i = 0; i < number.length; i++) {
                 if (document.querySelectorAll('.boxOpen')[0].innerHTML == document.querySelectorAll('.boxOpen')[1].innerHTML) {
                     document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch');
                     document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch');
-
-                    if (document.querySelectorAll('.boxMatch').length == shuf_number.length) {
-                        alert('You Win!!!');
-                    }
-                } else {
+  
+                } 
+                else {
                     document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen');
                     document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen');
+                    alert('you clicked one ! try Again !!')
+                }
+                if (document.querySelectorAll('.boxMatch').length == shuf_number.length) {
+                    alert('You Win!!!');
                 }
             }
         }, 500);
