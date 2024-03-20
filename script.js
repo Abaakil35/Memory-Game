@@ -6,9 +6,13 @@ window.addEventListener("blur", () => {
 window.addEventListener("focus", () => {
     document.title = doctitle;
 });
+//  Voice animation
+// Message.box
 
-const number = ["1", "1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7", "8", "8"];
+
+const number = ["☢", "☢", "☠", "☠", "☃", "☃", "☣", "☣", "❄", "❄", "⚛︎", "⚛︎", "✹", "✹", "✪", "✪"];
 let math = Math;
+
 
 var shuf_number = number.sort(() => (Math.random() > .5) ? 2 : -1);
 for (var i = 0; i < number.length; i++) {
@@ -22,18 +26,20 @@ for (var i = 0; i < number.length; i++) {
                 if (document.querySelectorAll('.boxOpen')[0].innerHTML == document.querySelectorAll('.boxOpen')[1].innerHTML) {
                     document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch');
                     document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch');
-  
-                } 
-                else {
+                   
+                }
+                  else {
                     document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen');
                     document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen');
-                    alert('you clicked one ! try Again !!')
+                    
                 }
+                
+            
                 if (document.querySelectorAll('.boxMatch').length == shuf_number.length) {
                     alert('You Win!!!');
                 }
             }
-        }, 500);
+        },  500);
     };
 
     document.querySelector('.game').appendChild(box);
