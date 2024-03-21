@@ -1,23 +1,20 @@
 
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Nanum Brush Script", cursive;
+    font-family: "Nanum Brush Script", cursive ;
     font-weight: 400;
-    font-style: normal;
-}
+    font-style: normal; 
+} 
 body
 {
     display: flex;
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
     min-height: 100vh;
     background: #3f403f;
 }
-
-@media only screen and (min-width: 400px) and (max-width: 3000px){
 
 .container
 {
@@ -63,6 +60,7 @@ h2
     background: #267c65;
     
 }
+
 .game
 {
 width: 440px;
@@ -110,5 +108,4 @@ perspective: 500px;
 }
 
 
-}
-/* .message */
+

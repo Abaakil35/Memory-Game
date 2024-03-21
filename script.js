@@ -1,3 +1,4 @@
+// this is for the title 
 console.log("Test Title");
 let doctitle = document.title;
 window.addEventListener("blur", () => {
@@ -12,11 +13,15 @@ window.addEventListener("focus", () => {
 
 const number = ["☢", "☢", "☠", "☠", "☃", "☃", "☣", "☣", "❄", "❄", "⚛︎", "⚛︎", "✹", "✹", "✪", "✪"];
 let math = Math;
-
+let sound_match = new Audio('sounds effect/openMatch.wav');
+// sound_winnig 
+// sound_click
+// sound_notMatch
 
 var shuf_number = number.sort(() => (Math.random() > .5) ? 2 : -1);
 for (var i = 0; i < number.length; i++) {
     let box = document.createElement('div');
+    
     box.className = 'item';
     box.innerHTML = shuf_number[i];
     box.onclick = function() {
@@ -26,6 +31,8 @@ for (var i = 0; i < number.length; i++) {
                 if (document.querySelectorAll('.boxOpen')[0].innerHTML == document.querySelectorAll('.boxOpen')[1].innerHTML) {
                     document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch');
                     document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch');
+                    sound_match.play();
+                    return;
                    
                 }
                   else {
@@ -34,13 +41,12 @@ for (var i = 0; i < number.length; i++) {
                     
                 }
                 
-            
                 if (document.querySelectorAll('.boxMatch').length == shuf_number.length) {
                     alert('You Win!!!');
+                    
                 }
             }
-        },  500);
+        },500);
     };
-
     document.querySelector('.game').appendChild(box);
 }
