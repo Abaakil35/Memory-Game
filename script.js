@@ -8,6 +8,25 @@ window.addEventListener("focus", () => {
 });
 
 
+
+
+// ################
+// hna fin dart button ta3 close
+const closingthegame = document.getElementById('close-game-button')
+closingthegame.onclick = function (){
+    window.close()
+} 
+// ###################
+
+
+
+
+
+
+
+
+
+const container = document.querySelector('.container')
 const number = ["☢", "☢", "☠", "☠", "☃", "☃", "☣", "☣", "❄", "❄", "⚛︎", "⚛︎", "✹", "✹", "✪", "✪"];
 
 let sound_match = new Audio('sounds effect/match.mp3');
@@ -19,6 +38,8 @@ const startGameButton = document.getElementById("start-game-button");
 startGameButton.addEventListener("click", () => {
   messageBox.style.display = "none";
   messageBox.style.justifyContent = "center"
+//   #hna fin dark dik l3ayba taa3 button ila click katban lik l game
+  container.style.display = 'flex'
 });
 
 
@@ -45,8 +66,9 @@ for (var i = 0; i < number.length; i++) {
                   
                 
                 if (document.querySelectorAll('.boxMatch').length == shuf_number.length) {
-                   setTimeout(function(){
+                    
                     sound_win.play()
+                   setTimeout(function(){
                     alert('Congradulations!!!');
                    } , 700);
                     

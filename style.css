@@ -27,6 +27,19 @@ body
     gap: 30px;
     background: #8d9b88;
     padding: 15px 50px;
+    display: none;
+    animation-name: animate;
+    animation-duration: .5s;
+}
+@keyframes animate {
+    from {
+        translate:  -100px;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        translate:   0px;
+    }
     
 }
 h2
