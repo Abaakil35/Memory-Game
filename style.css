@@ -13,7 +13,7 @@ body
     justify-content: center;    
     align-items: center;
     min-height: 100vh;
-    background: #3f403f;
+    background: #353935;
 }
 
 .container
@@ -45,7 +45,7 @@ h2
 .reset
 {
     padding: 15px 15px ;
-    color: #267c65;
+    color: #687672;
     background: #fff;
     border: #fff;
     border: none;
@@ -60,7 +60,7 @@ h2
 .reset:focus
 {
     color: #fff;
-    background: #267c65;
+    background: #2e423d;
     
 }
 

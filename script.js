@@ -13,7 +13,13 @@ const number = ["☢", "☢", "☠", "☠", "☃", "☃", "☣", "☣", "❄", "
 let sound_match = new Audio('sounds effect/match.mp3');
 let sound_win = new Audio('sounds effect/winnig.mp3');
 sound_win.volume=0.5;
+const messageBox = document.getElementById("message-box");
+const startGameButton = document.getElementById("start-game-button");
 
+startGameButton.addEventListener("click", () => {
+  messageBox.style.display = "none";
+  messageBox.style.justifyContent = "center"
+});
 
 
 var shuf_number = number.sort(() => (Math.random() > .5) ? 2 : -1);
@@ -39,8 +45,10 @@ for (var i = 0; i < number.length; i++) {
                   
                 
                 if (document.querySelectorAll('.boxMatch').length == shuf_number.length) {
+                   setTimeout(function(){
                     sound_win.play()
                     alert('Congradulations!!!');
+                   } , 700);
                     
 
 
