@@ -6,57 +6,52 @@ window.addEventListener("blur", () => {
 window.addEventListener("focus", () => {
     document.title = doctitle;
 });
-//  Voice animation
-// Message.box
 
 
 const number = ["☢", "☢", "☠", "☠", "☃", "☃", "☣", "☣", "❄", "❄", "⚛︎", "⚛︎", "✹", "✹", "✪", "✪"];
-let math = Math;
-let sound_match = new Audio('sounds effect/openMatch.wav');
-// let sound_notmatch 
-// let sound_win
-var openedBoxes = [];
 
-number.sort(() => (Math.random() > .5) ? 1 : -1);
+let sound_match = new Audio('sounds effect/match.mp3');
+let sound_win = new Audio('sounds effect/winnig.mp3');
+sound_win.volume=0.5;
 
-number.forEach((number, index) => {
-    
+
+
+var shuf_number = number.sort(() => (Math.random() > .5) ? 2 : -1);
+for (var i = 0; i < number.length; i++) {
     let box = document.createElement('div');
+    
     box.className = 'item';
-    box.innerHTML = number;
-
+    box.innerHTML = shuf_number[i];
     box.onclick = function() {
         this.classList.add('boxOpen');
+        setTimeout(function() {
+            if (document.querySelectorAll('.boxOpen').length > 1) {
+                if (document.querySelectorAll('.boxOpen')[0].innerHTML == document.querySelectorAll('.boxOpen')[1].innerHTML)
+                 {
+                    document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch');
+                    document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch');
+                    sound_match.play();
+                    
+                    document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen');
+                    document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen');
+                    
+                };
+                  
+                
+                if (document.querySelectorAll('.boxMatch').length == shuf_number.length) {
+                    sound_win.play()
+                    alert('Congradulations!!!');
+                    
 
-        setTimeout(() => {
-            if (openedBoxes.length < 2) {
-                openedBoxes.push(this);
 
-                if (openedBoxes.length === 2) {
-                    if (openedBoxes[0].innerHTML === openedBoxes[1].innerHTML) {
-                        openedBoxes[0].classList.add('boxMatch');
-                        openedBoxes[1].classList.add('boxMatch');
-
-                        openedBoxes[0].classList.remove('boxOpen');
-                        openedBoxes[1].classList.remove('boxOpen');
-                        sound_match.play();
-
-                        if (document.querySelectorAll('.boxMatch').length === number.length) {
-                            alert('you win !!!');
-                        }
-
-                        openedBoxes = [];
-                    } else {
-                        openedBoxes[0].classList.remove('boxOpen');
-                        openedBoxes[1].classList.remove('boxOpen');
-                    }
-
-                    openedBoxes = [];
-                }
+                } else {
+                    document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen');
+                    document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen');
+                    
+                }; 
+               
             }
-        }, 500);
+        },750);
     };
-
-    document.body.appendChild(box);
-});
-  
+    document.querySelector('.game').appendChild(box);
+}
