@@ -101,8 +101,7 @@ perspective: 500px;
     border-radius: 7%;
     backface-visibility: hidden;
 }
-.boxOpen:after ,
-.boxMatch:after
+.boxOpen:after , .boxMatch:after
 {
     transform: rotateY(180deg );
 }

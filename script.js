@@ -1,5 +1,4 @@
 // this is for the title 
-console.log("Test Title");
 let doctitle = document.title;
 window.addEventListener("blur", () => {
     document.title = "Back Play!!!";
@@ -14,39 +13,50 @@ window.addEventListener("focus", () => {
 const number = ["☢", "☢", "☠", "☠", "☃", "☃", "☣", "☣", "❄", "❄", "⚛︎", "⚛︎", "✹", "✹", "✪", "✪"];
 let math = Math;
 let sound_match = new Audio('sounds effect/openMatch.wav');
-// sound_winnig 
-// sound_click
-// sound_notMatch
+// let sound_notmatch 
+// let sound_win
+var openedBoxes = [];
 
-var shuf_number = number.sort(() => (Math.random() > .5) ? 2 : -1);
-for (var i = 0; i < number.length; i++) {
-    let box = document.createElement('div');
+number.sort(() => (Math.random() > .5) ? 1 : -1);
+
+number.forEach((number, index) => {
     
+    let box = document.createElement('div');
     box.className = 'item';
-    box.innerHTML = shuf_number[i];
+    box.innerHTML = number;
+
     box.onclick = function() {
         this.classList.add('boxOpen');
-        setTimeout(function() {
-            if (document.querySelectorAll('.boxOpen').length > 1) {
-                if (document.querySelectorAll('.boxOpen')[0].innerHTML == document.querySelectorAll('.boxOpen')[1].innerHTML) {
-                    document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch');
-                    document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch');
-                    sound_match.play();
-                    return;
-                   
-                }
-                  else {
-                    document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen');
-                    document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen');
-                    
-                }
-                
-                if (document.querySelectorAll('.boxMatch').length == shuf_number.length) {
-                    alert('You Win!!!');
-                    
+
+        setTimeout(() => {
+            if (openedBoxes.length < 2) {
+                openedBoxes.push(this);
+
+                if (openedBoxes.length === 2) {
+                    if (openedBoxes[0].innerHTML === openedBoxes[1].innerHTML) {
+                        openedBoxes[0].classList.add('boxMatch');
+                        openedBoxes[1].classList.add('boxMatch');
+
+                        openedBoxes[0].classList.remove('boxOpen');
+                        openedBoxes[1].classList.remove('boxOpen');
+                        sound_match.play();
+
+                        if (document.querySelectorAll('.boxMatch').length === number.length) {
+                            alert('you win !!!');
+                        }
+
+                        openedBoxes = [];
+                    } else {
+                        openedBoxes[0].classList.remove('boxOpen');
+                        openedBoxes[1].classList.remove('boxOpen');
+                    }
+
+                    openedBoxes = [];
                 }
             }
-        },500);
+        }, 500);
     };
-    document.querySelector('.game').appendChild(box);
-}
+
+    document.body.appendChild(box);
+});
+  
