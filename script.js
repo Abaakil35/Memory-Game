@@ -7,9 +7,6 @@ window.addEventListener("focus", () => {
     document.title = doctitle;
 });
 
-
-
-
 // ################
 // hna fin dart button ta3 close
 const closingthegame = document.getElementById('close-game-button')
@@ -17,12 +14,6 @@ closingthegame.onclick = function (){
     window.close()
 } 
 // ###################
-
-
-
-
-
-
 
 
 
@@ -69,7 +60,7 @@ for (var i = 0; i < number.length; i++) {
                     
                     sound_win.play()
                    setTimeout(function(){
-                    alert('Congradulations!!!');
+                    alert('Congratulations!!!');
                    } , 700);
                     
 

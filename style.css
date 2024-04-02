@@ -13,7 +13,7 @@ body
     justify-content: center;    
     align-items: center;
     min-height: 100vh;
-    background: #353935;
+    background: #0b132b;
 }
 
 .container
@@ -25,7 +25,7 @@ body
     border-radius: 4%;
     flex-direction: column;
     gap: 30px;
-    background: #8d9b88;
+    background: #3a506b;
     padding: 15px 50px;
     display: none;
     animation-name: animate;
@@ -67,13 +67,18 @@ h2
     text-transform: uppercase ;
     cursor: pointer;
     font-weight: 600;
-    /* border raduis */
+    border-radius: 10px;
 
 }
 .reset:focus
 {
     color: #fff;
-    background: #2e423d;
+    background: #427aa1;
+    
+}
+.reset:hover{
+    background: #f3d8c7;
+    
     
 }
 
@@ -101,6 +106,7 @@ h2
     transform: rotateY(180deg);
     border-radius: 7%;
     font-family:'Ubuntu',sans-serif ;
+    cursor: pointer;
 }
 .item.boxOpen
 {
@@ -111,7 +117,7 @@ h2
     content: '';
     position: absolute;
     inset: 0;
-    background: #5e5b5e;
+    background: #1c2541;
     
     transition: 0.25s;
     transform: rotateY(0deg);
