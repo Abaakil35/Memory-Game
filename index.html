@@ -8,25 +8,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="message.css">
-  <link rel="icon" href="Icone.png">
+  <link rel="icon" href="pics/6168878.png ">
   <title>Memory Game</title>
 </head>
-<body>
+<body background="pics/wallpaper.jpg">
   <div class="container" id="container">
     <h2>Memory Game</h2>
-    <p class="text"> Find the  pairs of cards to win! </p>
+    <p class="score-text">  Score : <span id="score"></span> Points !</p>
     <div class="game">
     </div>
-    <button class="reset" onclick="window.location.reload();">Reset Game</button>
+
+    <button class="reset" onclick="window.location.reload();">Reset Game ↻</button>
+  
   </div>
+
   <div id="message-box">
     <h1>Welcome to the game!</h1>
-    <p> Welcome to Memory Game ! This is a simple memory card matching game. <br>
+    <p> Welcome to Memory Game ! <br> This is a simple memory card matching game. <br>
       Enjoy Playing !!</p>
     <div class="containergame">
       
-    <button id="start-game-button">Start Game</button>
-    <button id="close-game-button">close Game</button>
+    <button id="start-game-button">Start Game ✅</button>
+    <button id="close-game-button">close Game ❌</button>
     </div>
   </div>
   <script src="script.js"></script>

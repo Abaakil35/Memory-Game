@@ -13,9 +13,23 @@ body
     justify-content: center;    
     align-items: center;
     min-height: 100vh;
-    background: #0b132b;
+    background: #334244;
+    background-image: url(pics/wallpaper.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    backdrop-filter: blur(9px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
+.score {
+    display: flex;
+    align-items:center ;
+}
 .container
 {
     display: flex;
@@ -24,12 +38,13 @@ body
     align-items: center;
     border-radius: 4%;
     flex-direction: column;
-    gap: 30px;
-    background: #3a506b;
-    padding: 15px 50px;
+    gap: 20px;
+    background: #0f2b2f;
+    padding: 10px 40px ;
     display: none;
     animation-name: animate;
     animation-duration: .5s;
+      
 }
 @keyframes animate {
     from {
@@ -45,20 +60,29 @@ body
 h2
 {
     font-size: 4em ;
-    color: #fff;
+    font-weight: 600;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.1em; 
-    ;   
+       
     
 }
-.text{
-    font-weight: 100;
-    font-size: 1.5em
+#score{
+    color: gold;
+    font-size: 2em;
 }
+.score-text{
+    color: #f3d8c7;
+    font-weight: 100;
+    font-size: 30px;
+    font-family:"Nanum Brush Script", cursive  ;
+}
+
+
 .reset
 {
     padding: 15px 15px ;
-    color: #687672;
+    color: #454847;
     background: #fff;
     border: #fff;
     border: none;
@@ -73,7 +97,7 @@ h2
 .reset:focus
 {
     color: #fff;
-    background: #427aa1;
+    background: #77B0AA;
     
 }
 .reset:hover{
@@ -117,8 +141,9 @@ h2
     content: '';
     position: absolute;
     inset: 0;
-    background: #1c2541;
-    
+    background: #527370;
+    background-image: url(pics/6168878.png);
+    background-size: cover;
     transition: 0.25s;
     transform: rotateY(0deg);
     border-radius: 7%;
@@ -128,6 +153,3 @@ h2
 {
     transform: rotateY(180deg );
 }
-
-
-
